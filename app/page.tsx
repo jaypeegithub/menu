@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ingredients, Ingredient } from "@/data/ingredients";
 
 export default function Home() {
@@ -42,9 +43,15 @@ export default function Home() {
             onClick={() => setSelectedIngredient(ingredient)}
             className="bg-red-400 neo-brutalism-border neo-brutalism-button p-6 cursor-pointer transition-all"
           >
-            {/* Pokemon-style placeholder image */}
-            <div className="bg-yellow-300 border-4 border-black aspect-square mb-4 flex items-center justify-center">
-              <div className="text-6xl">🦀</div>
+            {/* Pixel art image */}
+            <div className="bg-yellow-300 border-4 border-black aspect-square mb-4 flex items-center justify-center relative overflow-hidden">
+              <Image
+                src={ingredient.image}
+                alt={ingredient.name}
+                fill
+                className="object-contain p-4"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
             
             {/* Name */}
@@ -81,8 +88,14 @@ export default function Home() {
             </button>
 
             {/* Image */}
-            <div className="bg-yellow-300 border-4 border-black aspect-square mb-6 flex items-center justify-center clear-both">
-              <div className="text-8xl">🦀</div>
+            <div className="bg-yellow-300 border-4 border-black aspect-square mb-6 flex items-center justify-center clear-both relative overflow-hidden">
+              <Image
+                src={selectedIngredient.image}
+                alt={selectedIngredient.name}
+                fill
+                className="object-contain p-8"
+                sizes="(max-width: 768px) 100vw, 500px"
+              />
             </div>
 
             {/* Details */}
@@ -95,9 +108,49 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">TYPE:</p>
-                <p className="text-sm uppercase text-red-600">
-                  {selectedIngredient.type}
+                <ul className="space-y-1">
+                  {selectedIngredient.type.map((t, index) => (
+                    <li key={index} className="text-sm uppercase text-red-600">
+                      • {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">TERRAIN:</p>
+                <p className="text-sm uppercase text-blue-600">
+                  {selectedIngredient.terrain}
                 </p>
+              </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">METHOD:</p>
+                <ul className="space-y-1">
+                  {selectedIngredient.method.map((m, index) => (
+                    <li key={index} className="text-sm uppercase text-green-600">
+                      • {m}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">FLAVOR:</p>
+                <p className="text-sm uppercase text-purple-600">
+                  {selectedIngredient.flavor}
+                </p>
+              </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">RECIPES:</p>
+                <ul className="space-y-1">
+                  {selectedIngredient.recipes.map((recipe, index) => (
+                    <li key={index} className="text-sm uppercase text-orange-600">
+                      • {recipe}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
