@@ -30,4 +30,14 @@ export const ingredients: Ingredient[] = [
     flavor: "Mild",
     recipes: ["Blue Sushi", "Fish Tacos"],
   },
+  {
+    id: "pacific-chanterelle",
+    name: "Pacific Chanterelle",
+    image: "/ingredients/pacific-chanterelle.svg",
+    type: ["Vegetable"],
+    terrain: "Moss, Forest",
+    method: ["Hand"],
+    flavor: "Savory, Sweet, Fruity",
+    recipes: ["Mushroom Risotto"],
+  },
 ];
