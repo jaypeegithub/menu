@@ -26,9 +26,19 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
+.env.development
+.env.production
+.env.test
 
 # vercel
 .vercel
+
+# API keys and secrets (extra protection)
+*.key
+*.secret
+secrets.json
+config.local.js
 
 # typescript
 *.tsbuildinfo
