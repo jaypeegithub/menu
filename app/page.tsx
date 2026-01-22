@@ -24,12 +24,15 @@ export default function Home() {
     <div className="min-h-screen p-8">
       {/* Header */}
       <header className="mb-12 text-center">
-        <h1 className="text-4xl md:text-6xl mb-4 text-red-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-          INGREDIENT
+        <h1 className="text-3xl md:text-5xl mb-2 text-blue-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+          JPEATSBC
         </h1>
-        <h2 className="text-2xl md:text-4xl text-blue-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-          FIELD GUIDE
+        <h2 className="text-4xl md:text-6xl mb-2 text-red-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+          CATCH & COOK
         </h2>
+        <h3 className="text-2xl md:text-4xl text-blue-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+          FIELD GUIDE
+        </h3>
       </header>
 
       {/* Search Bar */}
