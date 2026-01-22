@@ -7,10 +7,18 @@ import { ingredients, Ingredient } from "@/data/ingredients";
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null);
+  const [selectedTypeFilter, setSelectedTypeFilter] = useState<string | null>(null);
 
-  const filteredIngredients = ingredients.filter((ingredient) =>
-    ingredient.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Get all unique types from ingredients
+  const allTypes = Array.from(
+    new Set(ingredients.flatMap((ingredient) => ingredient.type))
+  ).sort();
+
+  const filteredIngredients = ingredients.filter((ingredient) => {
+    const matchesSearch = ingredient.name.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesType = !selectedTypeFilter || ingredient.type.includes(selectedTypeFilter);
+    return matchesSearch && matchesType;
+  });
 
   return (
     <div className="min-h-screen p-8">
@@ -25,7 +33,7 @@ export default function Home() {
       </header>
 
       {/* Search Bar */}
-      <div className="max-w-2xl mx-auto mb-12">
+      <div className="max-w-2xl mx-auto mb-8">
         <input
           type="text"
           placeholder="SEARCH..."
@@ -33,6 +41,36 @@ export default function Home() {
           onChange={(e) => setSearchTerm(e.target.value)}
           className="w-full px-6 py-4 text-lg bg-white neo-brutalism-border uppercase focus:outline-none focus:ring-0"
         />
+      </div>
+
+      {/* Type Filters */}
+      <div className="max-w-4xl mx-auto mb-12">
+        <p className="text-xs uppercase mb-3 text-center">FILTER BY TYPE:</p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <button
+            onClick={() => setSelectedTypeFilter(null)}
+            className={`px-4 py-2 text-sm uppercase neo-brutalism-border-sm neo-brutalism-button ${
+              selectedTypeFilter === null
+                ? "bg-green-400 text-black"
+                : "bg-white text-black"
+            }`}
+          >
+            ALL
+          </button>
+          {allTypes.map((type) => (
+            <button
+              key={type}
+              onClick={() => setSelectedTypeFilter(type)}
+              className={`px-4 py-2 text-sm uppercase neo-brutalism-border-sm neo-brutalism-button ${
+                selectedTypeFilter === type
+                  ? "bg-green-400 text-black"
+                  : "bg-white text-black"
+              }`}
+            >
+              {type}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Ingredient Grid */}
