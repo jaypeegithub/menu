@@ -8,16 +8,21 @@ export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null);
   const [selectedTypeFilter, setSelectedTypeFilter] = useState<string | null>(null);
+  const [selectedSeasonFilter, setSelectedSeasonFilter] = useState<string | null>(null);
 
   // Get all unique types from ingredients
   const allTypes = Array.from(
     new Set(ingredients.flatMap((ingredient) => ingredient.type))
   ).sort();
 
+  // All possible seasons
+  const allSeasons = ["Spring", "Summer", "Fall", "Winter", "Year Round"];
+
   const filteredIngredients = ingredients.filter((ingredient) => {
     const matchesSearch = ingredient.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesType = !selectedTypeFilter || ingredient.type.includes(selectedTypeFilter);
-    return matchesSearch && matchesType;
+    const matchesSeason = !selectedSeasonFilter || ingredient.season === selectedSeasonFilter;
+    return matchesSearch && matchesType && matchesSeason;
   });
 
   return (
@@ -47,7 +52,7 @@ export default function Home() {
       </div>
 
       {/* Type Filters */}
-      <div className="max-w-4xl mx-auto mb-12">
+      <div className="max-w-4xl mx-auto mb-8">
         <p className="text-xs uppercase mb-3 text-center">FILTER BY TYPE:</p>
         <div className="flex flex-wrap justify-center gap-3">
           <button
@@ -74,6 +79,23 @@ export default function Home() {
             </button>
           ))}
         </div>
+      </div>
+
+      {/* Season Dropdown Filter */}
+      <div className="max-w-2xl mx-auto mb-12">
+        <p className="text-xs uppercase mb-3 text-center">FILTER BY SEASON:</p>
+        <select
+          value={selectedSeasonFilter || ""}
+          onChange={(e) => setSelectedSeasonFilter(e.target.value || null)}
+          className="w-full px-6 py-4 text-sm bg-white neo-brutalism-border uppercase focus:outline-none focus:ring-0 cursor-pointer"
+        >
+          <option value="">ALL SEASONS</option>
+          {allSeasons.map((season) => (
+            <option key={season} value={season}>
+              {season}
+            </option>
+          ))}
+        </select>
       </div>
 
       {/* Ingredient Grid */}
@@ -192,6 +214,13 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+              </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">SEASON:</p>
+                <p className="text-sm uppercase text-violet-600">
+                  {selectedIngredient.season}
+                </p>
               </div>
             </div>
           </div>

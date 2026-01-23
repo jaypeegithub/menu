@@ -7,6 +7,7 @@ export interface Ingredient {
   method: string[];
   flavor: string;
   recipes: string[];
+  season: string;
 }
 
 export const ingredients: Ingredient[] = [
@@ -19,6 +20,7 @@ export const ingredients: Ingredient[] = [
     method: ["Hand", "Trap"],
     flavor: "Sweet, Delicate, Briny",
     recipes: ["Ganjang Gaejang", "Crab Cakes"],
+    season: "Year Round",
   },
   {
     id: "rock-greenling",
@@ -29,6 +31,7 @@ export const ingredients: Ingredient[] = [
     method: ["Spearfishing", "Rod and Reel"],
     flavor: "Mild",
     recipes: ["Blue Sushi", "Fish Tacos"],
+    season: "Year Round",
   },
   {
     id: "pacific-chanterelle",
@@ -39,5 +42,6 @@ export const ingredients: Ingredient[] = [
     method: ["Hand"],
     flavor: "Savory, Sweet, Fruity",
     recipes: ["Mushroom Risotto"],
+    season: "Fall",
   },
 ];
