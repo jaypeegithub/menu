@@ -15,13 +15,16 @@ export default function Home() {
     new Set(ingredients.flatMap((ingredient) => ingredient.type))
   ).sort();
 
-  // All possible seasons
-  const allSeasons = ["Spring", "Summer", "Fall", "Winter", "Year Round"];
+  // All possible seasons (excluding Year Round from dropdown)
+  const allSeasons = ["Spring", "Summer", "Fall", "Winter"];
 
   const filteredIngredients = ingredients.filter((ingredient) => {
     const matchesSearch = ingredient.name.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesType = !selectedTypeFilter || ingredient.type.includes(selectedTypeFilter);
-    const matchesSeason = !selectedSeasonFilter || ingredient.season === selectedSeasonFilter;
+    // Year Round ingredients match all seasons
+    const matchesSeason = !selectedSeasonFilter || 
+                          ingredient.season === selectedSeasonFilter || 
+                          ingredient.season === "Year Round";
     return matchesSearch && matchesType && matchesSeason;
   });
 
