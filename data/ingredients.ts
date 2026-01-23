@@ -13,7 +13,7 @@ export const ingredients: Ingredient[] = [
   {
     id: "dungeness-crab",
     name: "Dungeness Crab",
-    image: "/ingredients/dungeness-crab.svg",
+    image: "/ingredients/dungeness-crab.png",
     type: ["Shellfish", "Seafood"],
     terrain: "Sand",
     method: ["Hand", "Trap"],
@@ -23,7 +23,7 @@ export const ingredients: Ingredient[] = [
   {
     id: "rock-greenling",
     name: "Rock Greenling",
-    image: "/ingredients/rock-greenling.svg",
+    image: "/ingredients/rock-greenling.png",
     type: ["Fish", "Seafood"],
     terrain: "Rocky, Shallow",
     method: ["Spearfishing", "Rod and Reel"],
@@ -33,7 +33,7 @@ export const ingredients: Ingredient[] = [
   {
     id: "pacific-chanterelle",
     name: "Pacific Chanterelle",
-    image: "/ingredients/pacific-chanterelle.svg",
+    image: "/ingredients/pacific-chanterelle.png",
     type: ["Vegetable"],
     terrain: "Moss, Forest",
     method: ["Hand"],

@@ -9,12 +9,13 @@ This folder contains pixel art images for each ingredient.
 - **Size**: 200x200px recommended
 - **Naming**: Use the ingredient ID (e.g., `dungeness-crab.png`)
 
-## Current Placeholders
+## Current Images
 
-The `.svg` files are temporary placeholders with emojis. Replace them with your pixel art PNG files:
+Custom pixel art icons in PNG format:
 
-- `dungeness-crab.png` (or .svg)
-- `rock-greenling.png` (or .svg)
+- `dungeness-crab.png`
+- `rock-greenling.png`
+- `pacific-chanterelle.png`
 
 ## Adding New Ingredients
 
