@@ -27,9 +27,12 @@ export default function Home() {
         <h1 className="text-3xl md:text-5xl mb-2 text-cyan-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
           JPEATSBC
         </h1>
-        <h2 className="text-2xl md:text-4xl text-white text-border drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-          CATCH & COOK FIELD GUIDE
+        <h2 className="text-4xl md:text-6xl mb-2 text-white text-border drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+          CATCH & COOK
         </h2>
+        <h3 className="text-2xl md:text-4xl text-cyan-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+          FIELD GUIDE
+        </h3>
       </header>
 
       {/* Search Bar */}
@@ -79,10 +82,10 @@ export default function Home() {
           <button
             key={ingredient.id}
             onClick={() => setSelectedIngredient(ingredient)}
-            className="bg-white neo-brutalism-border neo-brutalism-button p-6 cursor-pointer transition-all"
+            className="bg-cyan-400 neo-brutalism-border neo-brutalism-button p-6 cursor-pointer transition-all"
           >
             {/* Pixel art image */}
-            <div className="bg-amber-100 border-4 border-black aspect-square mb-4 flex items-center justify-center relative overflow-hidden">
+            <div className="bg-white border-4 border-black aspect-square mb-4 flex items-center justify-center relative overflow-hidden">
               <Image
                 src={ingredient.image}
                 alt={ingredient.name}
@@ -126,7 +129,7 @@ export default function Home() {
             </button>
 
             {/* Image */}
-            <div className="bg-amber-100 border-4 border-black aspect-square mb-6 flex items-center justify-center clear-both relative overflow-hidden">
+            <div className="bg-white border-4 border-black aspect-square mb-6 flex items-center justify-center clear-both relative overflow-hidden">
               <Image
                 src={selectedIngredient.image}
                 alt={selectedIngredient.name}
