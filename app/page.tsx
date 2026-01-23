@@ -24,15 +24,12 @@ export default function Home() {
     <div className="min-h-screen p-8">
       {/* Header */}
       <header className="mb-12 text-center">
-        <h1 className="text-3xl md:text-5xl mb-2 text-teal-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+        <h1 className="text-3xl md:text-5xl mb-2 text-cyan-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
           JPEATSBC
         </h1>
-        <h2 className="text-4xl md:text-6xl mb-2 text-cyan-700 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-          CATCH & COOK
+        <h2 className="text-2xl md:text-4xl text-white text-border drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+          CATCH & COOK FIELD GUIDE
         </h2>
-        <h3 className="text-2xl md:text-4xl text-amber-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
-          FIELD GUIDE
-        </h3>
       </header>
 
       {/* Search Bar */}
@@ -82,7 +79,7 @@ export default function Home() {
           <button
             key={ingredient.id}
             onClick={() => setSelectedIngredient(ingredient)}
-            className="bg-cyan-400 neo-brutalism-border neo-brutalism-button p-6 cursor-pointer transition-all"
+            className="bg-white neo-brutalism-border neo-brutalism-button p-6 cursor-pointer transition-all"
           >
             {/* Pixel art image */}
             <div className="bg-amber-100 border-4 border-black aspect-square mb-4 flex items-center justify-center relative overflow-hidden">

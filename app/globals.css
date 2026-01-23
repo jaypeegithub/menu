@@ -36,3 +36,10 @@ body {
   transform: translate(4px, 4px);
   box-shadow: 4px 4px 0px #000;
 }
+
+/* Text with black border */
+.text-border {
+  -webkit-text-stroke: 2px black;
+  text-stroke: 2px black;
+  paint-order: stroke fill;
+}
