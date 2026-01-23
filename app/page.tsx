@@ -24,13 +24,13 @@ export default function Home() {
     <div className="min-h-screen p-8">
       {/* Header */}
       <header className="mb-12 text-center">
-        <h1 className="text-3xl md:text-5xl mb-2 text-blue-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+        <h1 className="text-3xl md:text-5xl mb-2 text-teal-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
           JPEATSBC
         </h1>
-        <h2 className="text-4xl md:text-6xl mb-2 text-red-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+        <h2 className="text-4xl md:text-6xl mb-2 text-cyan-700 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
           CATCH & COOK
         </h2>
-        <h3 className="text-2xl md:text-4xl text-blue-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
+        <h3 className="text-2xl md:text-4xl text-amber-600 drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">
           FIELD GUIDE
         </h3>
       </header>
@@ -54,7 +54,7 @@ export default function Home() {
             onClick={() => setSelectedTypeFilter(null)}
             className={`px-4 py-2 text-sm uppercase neo-brutalism-border-sm neo-brutalism-button ${
               selectedTypeFilter === null
-                ? "bg-green-400 text-black"
+                ? "bg-teal-400 text-black"
                 : "bg-white text-black"
             }`}
           >
@@ -66,7 +66,7 @@ export default function Home() {
               onClick={() => setSelectedTypeFilter(type)}
               className={`px-4 py-2 text-sm uppercase neo-brutalism-border-sm neo-brutalism-button ${
                 selectedTypeFilter === type
-                  ? "bg-green-400 text-black"
+                  ? "bg-teal-400 text-black"
                   : "bg-white text-black"
               }`}
             >
@@ -82,10 +82,10 @@ export default function Home() {
           <button
             key={ingredient.id}
             onClick={() => setSelectedIngredient(ingredient)}
-            className="bg-red-400 neo-brutalism-border neo-brutalism-button p-6 cursor-pointer transition-all"
+            className="bg-cyan-400 neo-brutalism-border neo-brutalism-button p-6 cursor-pointer transition-all"
           >
             {/* Pixel art image */}
-            <div className="bg-yellow-300 border-4 border-black aspect-square mb-4 flex items-center justify-center relative overflow-hidden">
+            <div className="bg-amber-100 border-4 border-black aspect-square mb-4 flex items-center justify-center relative overflow-hidden">
               <Image
                 src={ingredient.image}
                 alt={ingredient.name}
@@ -117,19 +117,19 @@ export default function Home() {
           onClick={() => setSelectedIngredient(null)}
         >
           <div
-            className="bg-blue-400 neo-brutalism-border p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto"
+            className="bg-cyan-300 neo-brutalism-border p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close Button */}
             <button
               onClick={() => setSelectedIngredient(null)}
-              className="float-right bg-red-500 text-white px-4 py-2 neo-brutalism-border-sm neo-brutalism-button text-xs"
+              className="float-right bg-teal-600 text-white px-4 py-2 neo-brutalism-border-sm neo-brutalism-button text-xs"
             >
               CLOSE
             </button>
 
             {/* Image */}
-            <div className="bg-yellow-300 border-4 border-black aspect-square mb-6 flex items-center justify-center clear-both relative overflow-hidden">
+            <div className="bg-amber-100 border-4 border-black aspect-square mb-6 flex items-center justify-center clear-both relative overflow-hidden">
               <Image
                 src={selectedIngredient.image}
                 alt={selectedIngredient.name}
@@ -151,7 +151,7 @@ export default function Home() {
                 <p className="text-xs uppercase mb-2">TYPE:</p>
                 <ul className="space-y-1">
                   {selectedIngredient.type.map((t, index) => (
-                    <li key={index} className="text-sm uppercase text-red-600">
+                    <li key={index} className="text-sm uppercase text-teal-600">
                       • {t}
                     </li>
                   ))}
@@ -160,7 +160,7 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">TERRAIN:</p>
-                <p className="text-sm uppercase text-blue-600">
+                <p className="text-sm uppercase text-cyan-700">
                   {selectedIngredient.terrain}
                 </p>
               </div>
@@ -169,7 +169,7 @@ export default function Home() {
                 <p className="text-xs uppercase mb-2">METHOD:</p>
                 <ul className="space-y-1">
                   {selectedIngredient.method.map((m, index) => (
-                    <li key={index} className="text-sm uppercase text-green-600">
+                    <li key={index} className="text-sm uppercase text-emerald-600">
                       • {m}
                     </li>
                   ))}
@@ -178,7 +178,7 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">FLAVOR:</p>
-                <p className="text-sm uppercase text-purple-600">
+                <p className="text-sm uppercase text-sky-600">
                   {selectedIngredient.flavor}
                 </p>
               </div>
@@ -187,7 +187,7 @@ export default function Home() {
                 <p className="text-xs uppercase mb-2">RECIPES:</p>
                 <ul className="space-y-1">
                   {selectedIngredient.recipes.map((recipe, index) => (
-                    <li key={index} className="text-sm uppercase text-orange-600">
+                    <li key={index} className="text-sm uppercase text-amber-600">
                       • {recipe}
                     </li>
                   ))}
