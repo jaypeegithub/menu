@@ -58,7 +58,7 @@ export default function Home() {
           <div>
             <h5 className="text-sm uppercase mb-2 text-teal-600">Learn</h5>
             <p className="leading-relaxed">
-              Discover what it is, where it lives, how it tastes, and what to consider.
+              Explore what it is, where it lives, how it tastes, and what to consider.
             </p>
           </div>
           <div>
@@ -273,7 +273,7 @@ export default function Home() {
           </p>
         </div>
         <div className="text-center text-xs opacity-50 pb-4">
-          <p>© {new Date().getFullYear()} JPEATSBC Catch & Cook Field Guide</p>
+          <p>{new Date().getFullYear()} JPEATSBC Catch & Cook Field Guide</p>
         </div>
       </footer>
     </div>
