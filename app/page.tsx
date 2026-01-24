@@ -43,6 +43,19 @@ export default function Home() {
         </h3>
       </header>
 
+      {/* How to Use Section */}
+      <div className="max-w-3xl mx-auto mb-12 bg-white neo-brutalism-border p-6">
+        <h4 className="text-sm md:text-base uppercase mb-3 text-center text-cyan-700">
+          How to Use This Guide
+        </h4>
+        <p className="text-xs leading-relaxed text-center">
+          Search for ingredients by name, filter by type (fish, shellfish, etc.), 
+          or browse by season. Click any card to learn more about harvest methods, 
+          flavor profiles, and recipe ideas. Ingredients available year-round appear 
+          in all seasonal filters!
+        </p>
+      </div>
+
       {/* Search Bar */}
       <div className="max-w-2xl mx-auto mb-8">
         <input
@@ -229,6 +242,23 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* Footer Disclaimer */}
+      <footer className="max-w-4xl mx-auto mt-16 pt-8 border-t-2 border-black">
+        <div className="text-center mb-8">
+          <p className="text-xs leading-relaxed mb-3 opacity-70">
+            This field guide is for educational and recreational purposes. Always verify local 
+            regulations, harvest seasons, and safety guidelines before foraging or fishing. 
+            Proper identification and sustainable practices are essential.
+          </p>
+          <p className="text-xs opacity-60">
+            When in doubt, consult local experts and wildlife authorities.
+          </p>
+        </div>
+        <div className="text-center text-xs opacity-50 pb-4">
+          <p>© {new Date().getFullYear()} JPEATSBC Catch & Cook Field Guide</p>
+        </div>
+      </footer>
     </div>
   );
 }
