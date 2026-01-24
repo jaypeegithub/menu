@@ -51,8 +51,7 @@ export default function Home() {
         <p className="text-xs leading-relaxed text-center">
           Search for ingredients by name, filter by type (fish, shellfish, etc.), 
           or browse by season. Click any card to learn more about harvest methods, 
-          flavor profiles, and recipe ideas. Ingredients available year-round appear 
-          in all seasonal filters!
+          flavor profiles, and recipe ideas.
         </p>
       </div>
 
@@ -246,13 +245,15 @@ export default function Home() {
       {/* Footer Disclaimer */}
       <footer className="max-w-4xl mx-auto mt-16 pt-8 border-t-2 border-black">
         <div className="text-center mb-8">
-          <p className="text-xs leading-relaxed mb-3 opacity-70">
-            This field guide is for educational and recreational purposes. Always verify local 
-            regulations, harvest seasons, and safety guidelines before foraging or fishing. 
-            Proper identification and sustainable practices are essential.
+          <h5 className="text-sm uppercase mb-3 opacity-70">Disclaimer</h5>
+          <p className="text-xs leading-relaxed mb-2 opacity-70">
+            This guide is for educational purposes only. Information may be incomplete or outdated.
           </p>
-          <p className="text-xs opacity-60">
-            When in doubt, consult local experts and wildlife authorities.
+          <p className="text-xs leading-relaxed mb-2 opacity-70">
+            Always consult official regulations and trusted local resources.
+          </p>
+          <p className="text-xs leading-relaxed opacity-70">
+            Harvesting, preparation, and consumption of wild foods is done at your own risk.
           </p>
         </div>
         <div className="text-center text-xs opacity-50 pb-4">
