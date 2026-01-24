@@ -162,34 +162,21 @@ export default function Home() {
         />
       </div>
 
-      {/* Type Filters */}
-      <div className="max-w-4xl mx-auto mb-8">
+      {/* Type Dropdown Filter */}
+      <div className="max-w-2xl mx-auto mb-8">
         <p className="text-xs uppercase mb-3 text-center">FILTER BY TYPE:</p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <button
-            onClick={() => setSelectedTypeFilter(null)}
-            className={`px-4 py-2 text-sm uppercase neo-brutalism-border-sm neo-brutalism-button ${
-              selectedTypeFilter === null
-                ? "bg-teal-400 text-black"
-                : "bg-white text-black"
-            }`}
-          >
-            ALL
-          </button>
+        <select
+          value={selectedTypeFilter || ""}
+          onChange={(e) => setSelectedTypeFilter(e.target.value || null)}
+          className="w-full px-6 py-4 text-sm bg-white neo-brutalism-border uppercase focus:outline-none focus:ring-0 cursor-pointer"
+        >
+          <option value="">ALL TYPES</option>
           {allTypes.map((type) => (
-            <button
-              key={type}
-              onClick={() => setSelectedTypeFilter(type)}
-              className={`px-4 py-2 text-sm uppercase neo-brutalism-border-sm neo-brutalism-button ${
-                selectedTypeFilter === type
-                  ? "bg-teal-400 text-black"
-                  : "bg-white text-black"
-              }`}
-            >
+            <option key={type} value={type}>
               {type}
-            </button>
+            </option>
           ))}
-        </div>
+        </select>
       </div>
 
       {/* Season Dropdown Filter */}

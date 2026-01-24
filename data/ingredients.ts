@@ -56,7 +56,7 @@ export const ingredients: Ingredient[] = [
     id: "pacific-chanterelle",
     name: "Pacific Chanterelle",
     image: "/ingredients/pacific-chanterelle.png",
-    type: ["Vegetable"],
+    type: ["Vegetable", "Land"],
     description: "Golden mushroom prized for its unique flavor. Commonly found in mossy British Columbia forests during fall months, often near Douglas fir and hemlock trees.",
     environment: ["Moss", "Forest"],
     method: ["Hand"],
