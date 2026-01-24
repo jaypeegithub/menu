@@ -71,14 +71,14 @@ export default function Home() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [selectedIngredient, filteredIngredients]);
 
-  // Background scroll lock when modal is open
+  // Lock scroll when modal is open
   useEffect(() => {
     if (selectedIngredient) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-    
+
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -268,15 +268,15 @@ export default function Home() {
                 style={{ imageRendering: 'pixelated' }}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-10 h-10 md:w-12 md:h-12" style={{ imageRendering: 'pixelated' }}>
-                  <rect x="16" y="4" width="2" height="2" />
-                  <rect x="14" y="6" width="2" height="2" />
-                  <rect x="12" y="8" width="2" height="2" />
-                  <rect x="10" y="10" width="2" height="2" />
-                  <rect x="8" y="12" width="2" height="2" />
-                  <rect x="10" y="14" width="2" height="2" />
-                  <rect x="12" y="16" width="2" height="2" />
-                  <rect x="14" y="18" width="2" height="2" />
-                  <rect x="16" y="20" width="2" height="2" />
+                  <rect x="14" y="4" width="2" height="2" />
+                  <rect x="12" y="6" width="2" height="2" />
+                  <rect x="10" y="8" width="2" height="2" />
+                  <rect x="8" y="10" width="2" height="2" />
+                  <rect x="6" y="12" width="2" height="2" />
+                  <rect x="8" y="14" width="2" height="2" />
+                  <rect x="10" y="16" width="2" height="2" />
+                  <rect x="12" y="18" width="2" height="2" />
+                  <rect x="14" y="20" width="2" height="2" />
                 </svg>
               </button>
             )}
