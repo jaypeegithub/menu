@@ -234,9 +234,13 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">FLAVOR:</p>
-                <p className="text-sm uppercase text-sky-600">
-                  {selectedIngredient.flavor}
-                </p>
+                <ul className="space-y-1">
+                  {selectedIngredient.flavor.map((f, index) => (
+                    <li key={index} className="text-sm uppercase text-sky-600">
+                      • {f}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="bg-white neo-brutalism-border-sm p-4">
