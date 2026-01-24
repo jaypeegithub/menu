@@ -44,15 +44,30 @@ export default function Home() {
       </header>
 
       {/* How to Use Section */}
-      <div className="max-w-3xl mx-auto mb-12 bg-white neo-brutalism-border p-6">
-        <h4 className="text-sm md:text-base uppercase mb-3 text-center text-cyan-700">
+      <div className="max-w-3xl mx-auto mb-12 text-center">
+        <h4 className="text-base md:text-lg uppercase mb-6 text-cyan-700 drop-shadow-[2px_2px_0px_rgba(0,0,0,0.3)]">
           How to Use This Guide
         </h4>
-        <p className="text-xs leading-relaxed text-center">
-          Search for ingredients by name, filter by type (fish, shellfish, etc.), 
-          or browse by season. Click any card to learn more about harvest methods, 
-          flavor profiles, and recipe ideas.
-        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs md:text-sm">
+          <div>
+            <h5 className="text-sm uppercase mb-2 text-teal-600">Discover</h5>
+            <p className="leading-relaxed">
+              Browse or filter ingredients by type or season.
+            </p>
+          </div>
+          <div>
+            <h5 className="text-sm uppercase mb-2 text-teal-600">Learn</h5>
+            <p className="leading-relaxed">
+              Discover what it is, where it lives, how it tastes, and what to consider.
+            </p>
+          </div>
+          <div>
+            <h5 className="text-sm uppercase mb-2 text-teal-600">Verify</h5>
+            <p className="leading-relaxed">
+              Confirm current regulations, safe identification, and proper preparation.
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Search Bar */}
@@ -247,7 +262,8 @@ export default function Home() {
         <div className="text-center mb-8">
           <h5 className="text-sm uppercase mb-3 opacity-70">Disclaimer</h5>
           <p className="text-xs leading-relaxed mb-2 opacity-70">
-            This guide is for educational purposes only. Information may be incomplete or outdated.
+            This guide is for educational purposes only. Always verify local 
+            regulations, harvest seasons, and safety guidelines before foraging or fishing. Information may be incomplete or outdated.
           </p>
           <p className="text-xs leading-relaxed mb-2 opacity-70">
             Always consult official regulations and trusted local resources.
