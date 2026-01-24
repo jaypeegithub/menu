@@ -212,9 +212,13 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">ENVIRONMENT:</p>
-                <p className="text-sm uppercase text-cyan-700">
-                  {selectedIngredient.environment}
-                </p>
+                <ul className="space-y-1">
+                  {selectedIngredient.environment.map((env, index) => (
+                    <li key={index} className="text-sm uppercase text-cyan-700">
+                      • {env}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="bg-white neo-brutalism-border-sm p-4">
@@ -255,7 +259,7 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">NOTES:</p>
-                <p className="text-xs leading-relaxed text-red-600">
+                <p className="text-xs leading-relaxed uppercase text-red-600">
                   {selectedIngredient.notes}
                 </p>
               </div>
