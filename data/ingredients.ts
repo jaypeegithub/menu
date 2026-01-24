@@ -3,6 +3,7 @@ export interface Ingredient {
   name: string;
   image: string;
   type: string[];
+  description: string;
   environment: string[];
   method: string[];
   flavor: string[];
@@ -17,6 +18,7 @@ export const ingredients: Ingredient[] = [
     name: "Banana Slug",
     image: "/ingredients/banana-slug.png",
     type: ["Land"],
+    description: "Large yellow slug native to British Columbia forests. Can grow up to 10 inches long and is the second largest slug species in the world.",
     environment: ["Forest"],
     method: ["Hand harvest"],
     flavor: ["Clam-like", "Chewy"],
@@ -29,7 +31,8 @@ export const ingredients: Ingredient[] = [
     name: "Dungeness Crab",
     image: "/ingredients/dungeness-crab.png",
     type: ["Shellfish", "Sea"],
-    environment: ["Sand", "1 - 250m"],
+    description: "Popular crab species found along the Pacific coast. Known for its sweet meat and purple-tinged shell, it's a staple of West Coast seafood cuisine.",
+    environment: ["Sand", "1-250m"],
     method: ["Hand", "Trap"],
     flavor: ["Sweet", "Delicate", "Briny"],
     recipes: ["Ganjang Gaejang", "Crab Cakes"],
@@ -41,7 +44,8 @@ export const ingredients: Ingredient[] = [
     name: "Opal Squid",
     image: "/ingredients/opal-squid.png",
     type: ["Sea"],
-    environment: ["Open Ocean", "1 - 250m"],
+    description: "Small squid species common in British Columbia waters. Gets its name from the iridescent opal-like appearance of its skin.",
+    environment: ["Open Ocean", "1-250m"],
     method: ["Cast Net", "Jigging"],
     flavor: ["Mild", "Briny", "Sweet"],
     recipes: ["Squid Ink Mandoo", "Calamari"],
@@ -53,6 +57,7 @@ export const ingredients: Ingredient[] = [
     name: "Pacific Chanterelle",
     image: "/ingredients/pacific-chanterelle.png",
     type: ["Vegetable"],
+    description: "Golden mushroom prized for its unique flavor. Commonly found in mossy British Columbia forests during fall months, often near Douglas fir and hemlock trees.",
     environment: ["Moss", "Forest"],
     method: ["Hand"],
     flavor: ["Savory", "Sweet", "Fruity"],
@@ -65,7 +70,8 @@ export const ingredients: Ingredient[] = [
     name: "Puget Sound King Crab",
     image: "/ingredients/puget-sound-king-crab.png",
     type: ["Shellfish", "Sea"],
-    environment: ["Rocky", "1 - 140m"],
+    description: "Smaller relative of the Alaskan king crab found in local waters. Features spiky red shell and short legs with dense, meaty flesh.",
+    environment: ["Rocky", "1-140m"],
     method: ["Hand picking", "Trap"],
     flavor: ["Mild", "Briny", "Meaty"],
     recipes: ["King Crab Fried Rice"],
@@ -77,7 +83,8 @@ export const ingredients: Ingredient[] = [
     name: "Rock Greenling",
     image: "/ingredients/rock-greenling.png",
     type: ["Fish", "Sea"],
-    environment: ["Rocky", "1 - 30m"],
+    description: "Brilliantly coloured nearshore fish found around rocky reefs and kelp beds. Neon blue meat due to a protein called bilverdin..",
+    environment: ["Rocky", "1-30m"],
     method: ["Spearfishing", "Rod and Reel"],
     flavor: ["Mild"],
     recipes: ["Blue Sushi", "Fish Tacos"],
@@ -89,6 +96,7 @@ export const ingredients: Ingredient[] = [
     name: "Salal Berries",
     image: "/ingredients/salal.png",
     type: ["Fruit", "Land"],
+    description: "Dark purple berries from an evergreen shrub native to British Columbia. Traditionally used by indigenous peoples for food and medicine.",
     environment: ["Forest"],
     method: ["Hand picking"],
     flavor: ["Sweet", "Blackcurrant", "Earthy"],

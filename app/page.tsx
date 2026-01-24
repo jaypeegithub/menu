@@ -211,6 +211,20 @@ export default function Home() {
               </div>
 
               <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">DESCRIPTION:</p>
+                <p className="text-sm leading-relaxed text-gray-800">
+                  {selectedIngredient.description}
+                </p>
+              </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">SEASON:</p>
+                <p className="text-sm uppercase text-violet-600">
+                  {selectedIngredient.season}
+                </p>
+              </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">ENVIRONMENT:</p>
                 <ul className="space-y-1">
                   {selectedIngredient.environment.map((env, index) => (
@@ -252,13 +266,6 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="bg-white neo-brutalism-border-sm p-4">
-                <p className="text-xs uppercase mb-2">SEASON:</p>
-                <p className="text-sm uppercase text-violet-600">
-                  {selectedIngredient.season}
-                </p>
               </div>
 
               <div className="bg-white neo-brutalism-border-sm p-4">

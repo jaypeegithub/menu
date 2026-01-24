@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "JPEATSBC",
-  description: "JPEATSBC Catch & Cook Field Guide - Pacific Northwest ingredients",
+  description: "JPEATSBC Catch & Cook Field Guide - British Columbia ingredients",
   icons: {
     icon: "/favicon.png",
   },
