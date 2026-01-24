@@ -83,7 +83,7 @@ export const ingredients: Ingredient[] = [
     name: "Rock Greenling",
     image: "/ingredients/rock-greenling.png",
     type: ["Fish", "Sea"],
-    description: "Brilliantly coloured nearshore fish found around rocky reefs and kelp beds. Neon blue meat due to a protein called bilverdin..",
+    description: "Brilliantly coloured nearshore fish found around rocky reefs and kelp beds. Neon blue meat due to a protein called bilverdin.",
     environment: ["Rocky", "1-30m"],
     method: ["Spearfishing", "Rod and Reel"],
     flavor: ["Mild"],
@@ -93,7 +93,7 @@ export const ingredients: Ingredient[] = [
   },
   {
     id: "salal",
-    name: "Salal Berries",
+    name: "Salal Berry",
     image: "/ingredients/salal.png",
     type: ["Fruit", "Land"],
     description: "Dark purple berries from an evergreen shrub native to British Columbia. Traditionally used by indigenous peoples for food and medicine.",

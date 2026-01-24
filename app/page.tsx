@@ -72,7 +72,7 @@ export default function Home() {
   }, [selectedIngredient, filteredIngredients]);
 
   // Swipe gesture handling
-  const minSwipeDistance = 50;
+  const minSwipeDistance = 100;
 
   const onTouchStart = (e: React.TouchEvent) => {
     setTouchEnd(null);
@@ -309,6 +309,15 @@ export default function Home() {
               </div>
 
               <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">DESCRIPTION:</p>
+                <ul className="space-y-1">
+                  <li className="text-sm leading-relaxed uppercase text-gray-800">
+                    • {selectedIngredient.description}
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">TYPE:</p>
                 <ul className="space-y-1">
                   {selectedIngredient.type.map((t, index) => (
@@ -317,13 +326,6 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </div>
-
-              <div className="bg-white neo-brutalism-border-sm p-4">
-                <p className="text-xs uppercase mb-2">DESCRIPTION:</p>
-                <p className="text-sm leading-relaxed uppercase text-gray-800">
-                  {selectedIngredient.description}
-                </p>
               </div>
 
               <div className="bg-white neo-brutalism-border-sm p-4">
