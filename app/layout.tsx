@@ -5,8 +5,7 @@ export const metadata: Metadata = {
   title: "JPEATSBC",
   description: "JPEATSBC Catch & Cook Field Guide - Pacific Northwest ingredients",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon-192.png",
+    icon: "/favicon.png",
   },
 };
 
