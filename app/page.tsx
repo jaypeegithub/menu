@@ -211,9 +211,9 @@ export default function Home() {
               </div>
 
               <div className="bg-white neo-brutalism-border-sm p-4">
-                <p className="text-xs uppercase mb-2">TERRAIN:</p>
+                <p className="text-xs uppercase mb-2">ENVIRONMENT:</p>
                 <p className="text-sm uppercase text-cyan-700">
-                  {selectedIngredient.terrain}
+                  {selectedIngredient.environment}
                 </p>
               </div>
 
@@ -252,6 +252,13 @@ export default function Home() {
                   {selectedIngredient.season}
                 </p>
               </div>
+
+              <div className="bg-white neo-brutalism-border-sm p-4">
+                <p className="text-xs uppercase mb-2">NOTES:</p>
+                <p className="text-xs leading-relaxed text-red-600">
+                  {selectedIngredient.notes}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -262,11 +269,13 @@ export default function Home() {
         <div className="text-center mb-8">
           <h5 className="text-sm uppercase mb-3 opacity-70">Disclaimer</h5>
           <p className="text-xs leading-relaxed mb-2 opacity-70">
-            This guide is for educational purposes only. Always verify local 
-            regulations, harvest seasons, and safety guidelines before foraging or fishing. Information may be incomplete or outdated.
+            This guide is for educational purposes only. 
           </p>
           <p className="text-xs leading-relaxed mb-2 opacity-70">
             Always consult official regulations and trusted local resources.
+          </p>
+          <p className="text-xs leading-relaxed mb-2 opacity-70">
+          Always verify local regulations, harvest seasons, and safety guidelines before foraging or fishing. Information may be incomplete or outdated.
           </p>
           <p className="text-xs leading-relaxed opacity-70">
             Harvesting, preparation, and consumption of wild foods is done at your own risk.
