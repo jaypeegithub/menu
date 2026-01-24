@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { ingredients, Ingredient } from "@/data/ingredients";
 
@@ -9,6 +9,8 @@ export default function Home() {
   const [selectedIngredient, setSelectedIngredient] = useState<Ingredient | null>(null);
   const [selectedTypeFilter, setSelectedTypeFilter] = useState<string | null>(null);
   const [selectedSeasonFilter, setSelectedSeasonFilter] = useState<string | null>(null);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   // Get all unique types from ingredients
   const allTypes = Array.from(
@@ -27,6 +29,72 @@ export default function Home() {
                           ingredient.season === "Year Round";
     return matchesSearch && matchesType && matchesSeason;
   });
+
+  // Navigation functions
+  const navigateToNextIngredient = () => {
+    if (!selectedIngredient) return;
+    const currentIndex = filteredIngredients.findIndex(
+      (ing) => ing.id === selectedIngredient.id
+    );
+    if (currentIndex < filteredIngredients.length - 1) {
+      setSelectedIngredient(filteredIngredients[currentIndex + 1]);
+    }
+  };
+
+  const navigateToPreviousIngredient = () => {
+    if (!selectedIngredient) return;
+    const currentIndex = filteredIngredients.findIndex(
+      (ing) => ing.id === selectedIngredient.id
+    );
+    if (currentIndex > 0) {
+      setSelectedIngredient(filteredIngredients[currentIndex - 1]);
+    }
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (!selectedIngredient) return;
+      
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        navigateToNextIngredient();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        navigateToPreviousIngredient();
+      } else if (e.key === "Escape") {
+        setSelectedIngredient(null);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIngredient, filteredIngredients]);
+
+  // Swipe gesture handling
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    
+    if (isLeftSwipe) {
+      navigateToNextIngredient();
+    } else if (isRightSwipe) {
+      navigateToPreviousIngredient();
+    }
+  };
 
   return (
     <div className="min-h-screen p-8">
@@ -171,6 +239,9 @@ export default function Home() {
           <div
             className="bg-cyan-300 neo-brutalism-border p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
           >
             {/* Close Button */}
             <button
