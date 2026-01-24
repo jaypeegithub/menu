@@ -231,25 +231,63 @@ export default function Home() {
       )}
 
       {/* Modal/Popup */}
-      {selectedIngredient && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
-          onClick={() => setSelectedIngredient(null)}
-        >
+      {selectedIngredient && (() => {
+        const currentIndex = filteredIngredients.findIndex(
+          (ing) => ing.id === selectedIngredient.id
+        );
+        const isFirst = currentIndex === 0;
+        const isLast = currentIndex === filteredIngredients.length - 1;
+
+        return (
           <div
-            className="bg-cyan-300 neo-brutalism-border p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-            onTouchStart={onTouchStart}
-            onTouchMove={onTouchMove}
-            onTouchEnd={onTouchEnd}
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+            onClick={() => setSelectedIngredient(null)}
           >
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedIngredient(null)}
-              className="float-right bg-teal-600 text-white px-4 py-2 neo-brutalism-border-sm neo-brutalism-button text-xs"
+            {/* Navigation Arrows */}
+            {!isFirst && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateToPreviousIngredient();
+                }}
+                className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors z-50"
+                aria-label="Previous ingredient"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-10 h-10 md:w-12 md:h-12">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                </svg>
+              </button>
+            )}
+            
+            {!isLast && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  navigateToNextIngredient();
+                }}
+                className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors z-50"
+                aria-label="Next ingredient"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-10 h-10 md:w-12 md:h-12">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
+              </button>
+            )}
+
+            <div
+              className="bg-cyan-300 neo-brutalism-border p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto relative"
+              onClick={(e) => e.stopPropagation()}
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
             >
-              CLOSE
-            </button>
+              {/* Close Button */}
+              <button
+                onClick={() => setSelectedIngredient(null)}
+                className="float-right bg-teal-600 text-white px-4 py-2 neo-brutalism-border-sm neo-brutalism-button text-xs"
+              >
+                CLOSE
+              </button>
 
             {/* Image */}
             <div className="bg-white border-4 border-black aspect-square mb-6 flex items-center justify-center clear-both relative overflow-hidden">
@@ -283,7 +321,7 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">DESCRIPTION:</p>
-                <p className="text-sm leading-relaxed text-gray-800">
+                <p className="text-sm leading-relaxed uppercase text-gray-800">
                   {selectedIngredient.description}
                 </p>
               </div>
@@ -352,7 +390,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      )}
+        );
+      })()}
 
       {/* Footer Disclaimer */}
       <footer className="max-w-4xl mx-auto mt-16 pt-8 border-t-2 border-black">
