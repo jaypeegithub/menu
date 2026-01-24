@@ -134,15 +134,15 @@ export default function Home() {
           <button
             key={ingredient.id}
             onClick={() => setSelectedIngredient(ingredient)}
-            className="bg-cyan-400 neo-brutalism-border neo-brutalism-button p-6 cursor-pointer transition-all"
+            className="bg-cyan-400 neo-brutalism-border neo-brutalism-button p-3 md:p-6 cursor-pointer transition-all"
           >
             {/* Pixel art image */}
-            <div className="bg-white border-4 border-black aspect-square mb-4 flex items-center justify-center relative overflow-hidden">
+            <div className="bg-white border-2 md:border-4 border-black aspect-square mb-2 md:mb-4 flex items-center justify-center relative overflow-hidden">
               <Image
                 src={ingredient.image}
                 alt={ingredient.name}
                 fill
-                className="object-contain p-4"
+                className="object-contain p-1 md:p-4"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
