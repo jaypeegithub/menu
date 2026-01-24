@@ -219,9 +219,11 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">SEASON:</p>
-                <p className="text-sm uppercase text-violet-600">
-                  {selectedIngredient.season}
-                </p>
+                <ul className="space-y-1">
+                  <li className="text-sm uppercase text-violet-600">
+                    • {selectedIngredient.season}
+                  </li>
+                </ul>
               </div>
 
               <div className="bg-white neo-brutalism-border-sm p-4">
@@ -270,9 +272,11 @@ export default function Home() {
 
               <div className="bg-white neo-brutalism-border-sm p-4">
                 <p className="text-xs uppercase mb-2">NOTES:</p>
-                <p className="text-xs leading-relaxed uppercase text-red-600">
-                  {selectedIngredient.notes}
-                </p>
+                <ul className="space-y-1">
+                  <li className="text-xs leading-relaxed uppercase text-red-600">
+                    • {selectedIngredient.notes}
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
